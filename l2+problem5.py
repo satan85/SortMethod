@@ -5,38 +5,43 @@ word = input()
 
 indexList = []
 
-for letter in word:
+if word:
 
-    if letter in alphabets:
-        #print(alphabets.index(l))
-        indexList.append(alphabets.index(letter))
-    else:
-        print("False")
+    for letter in word:
 
-print(indexList)
+        if letter in alphabets:
+            #print(alphabets.index(l))
+            indexList.append(alphabets.index(letter))
+        else:
+            print("False")
 
-swap = True
+    #print(indexList)
 
-while swap:
-    swap = False
-        
-    for i in range(len(indexList) - 1):
-        if indexList[i] > indexList[i+1]:
-            indexList[i], indexList[i+1] = indexList[i+1], indexList[i]
-            swap = True
+    swap = True
 
-print(indexList)
+    while swap:
+        swap = False
 
-wordList = []
+        for i in range(len(indexList) - 1):
+            if indexList[i] > indexList[i+1]:
+                indexList[i], indexList[i+1] = indexList[i+1], indexList[i]
+                swap = True
 
-for i in indexList:
-    wordList.append(alphabets[i])
+    #print(indexList)
 
-print(''.join(wordList))
+    wordList = []
+
+    for i in indexList:
+        wordList.append(alphabets[i])
+
+    print(''.join(wordList))
 
 
-# Test Case using built in method:
+    # Test Case using built in method:
 
-letter = ['h','e','l', 'l', 'o']
-letter.sort()
-print(letter)
+    letter = ['h','e','l', 'l', 'o']
+    letter.sort()
+    print(letter)
+ 
+else:
+    print("No input received")
